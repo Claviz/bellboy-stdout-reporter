@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`logs bellboy job with custom name 1`] = `
+Array [
+  "",
+  "√ Job #10 (Funny job name) started",
+  "    Timestamp: timestamp-mock",
+  "",
+  "√ Job #10 (Funny job name). Stream #0 processed",
+  "    Timestamp: timestamp-mock",
+  "    Rows: 1 received (6 B)",
+  "    Destination #0",
+  "        Batch load: 1 loaded(8 B)",
+  "",
+  "√ Job #10 (Funny job name) completed",
+  "    Timestamp: timestamp-mock",
+  "    Job duration: pretty-ms-mock",
+]
+`;
+
 exports[`logs destination batch transformations 1`] = `
 Array [
   "",

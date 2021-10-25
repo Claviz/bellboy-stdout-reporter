@@ -199,3 +199,18 @@ it('logs truncated array', async () => {
     await job.run();
     expect(consoleData).toMatchSnapshot();
 });
+
+it('logs bellboy job with custom name', async () => {
+    const destination = new DummyDestination();
+    const processor = new DynamicProcessor({
+        generator: async function* () {
+            yield `test`;
+        },
+    });
+    const job = new Job(processor, [destination], {
+        jobName: 'Funny job name',
+        reporters: [new StdoutReporter()],
+    });
+    await job.run();
+    expect(consoleData).toMatchSnapshot();
+});

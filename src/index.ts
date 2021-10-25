@@ -24,7 +24,10 @@ export default class StdoutReporter extends Reporter {
     }
 
     report(job: Job) {
-        const jobId = globalJobId;
+        let jobId = globalJobId.toString();
+        if ((job as any).jobName) {
+            jobId += ` (${(job as any).jobName})`;
+        }
         globalJobId++;
         let stream: IStream;
         const startedMs = (new Date()).getTime();
